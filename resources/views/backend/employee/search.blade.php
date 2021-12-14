@@ -8,20 +8,18 @@
     <title>Employee</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
 <div class="container">
     <div class="row" style="margin-left: 20px">
         <form class="form-inline my-2 my-lg-0" action="{{ route('employees.search') }}" method="GET">
-            <input id="search-employee" style="width: 800px" class="form-control mr-sm-2" type="search" name="search"
-                   placeholder="Search" aria-label="Search">
+            <input id="search-employee" style="width: 800px" class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            <a style="margin: 5px" class="btn btn-outline-success" href="{{route('employees.index')}}" type="button">Back</a>
+            <a class="btn btn-outline-success" href="{{route('employees.index')}}" type="button">Back</a>
+
         </form>
-        <a class="btn btn-primary" href="{{route('employees.showFormCreate')}}" type="button"
-           style="margin: 10px">ADD</a>
+        <a class="btn btn-primary" href="{{route('employees.showFormCreate')}}" type="button" style="margin: 10px">ADD</a>
+
     </div>
 
     <div class="card">
@@ -51,9 +49,8 @@
                     <td>{{$employee->numbercard}}</td>
                     <td>{{$employee->email}}</td>
                     <td>{{$employee->address}}</td>
-                    <td><a type="button" onclick="return confirm(' Are you sure ? ')"
-                           href="{{route('employees.delete',$employee->id)}}"><i class="fas fa-trash-alt"></i></a></td>
-                    <td><a type="button" href="{{route("employees.showFormEdit",$employee->id)}}"><i class="fas fa-edit"></i></a></td>
+                    <td><a  type="button"  onclick="return confirm(' Are you sure ? ')" href="{{route('employees.delete',$employee->id)}}">Delete</a></td>
+                    <td><a  type="button" href="{{route("employees.showFormEdit",$employee->id)}}">Edit</a></td>
 
                 </tr>
             @endforeach
@@ -63,6 +60,8 @@
 
     </div>
 </div>
+
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
@@ -79,3 +78,4 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
+
